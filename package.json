@@ -1,0 +1,24 @@
+{
+  "name": "weather-cli",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Rishi-provus/Weather-CLI#readme",
+  "bugs": {
+    "url": "https://github.com/Rishi-provus/Weather-CLI/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rishi-provus/Weather-CLI.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "dotenv": "^17.2.4"
+  }
+}

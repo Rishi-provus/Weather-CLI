@@ -1,10 +1,11 @@
 import readline from "node:readline/promises";
 import dotenv from "dotenv";
+
 dotenv.config();
 const ApiKey=process.env.ApiKey;
 const ipUrl=process.env.ipUrl;
 const weatherBaseUrl=process.env.weatherUrl;
-console.log(ApiKey);
+
 
 const rl=readline.createInterface({
     input:process.stdin,
@@ -42,18 +43,19 @@ async function fetch_weather_data(location){
     try{
         const response = await fetch(`${weatherBaseUrl}/current.json?key=${ApiKey}&q=${location}&aqi=yes`); 
         if(!response.ok){
-            console.log("API resquest Failed")
+            throw new Error(`API resquest Failed .`);
         }
         const data=await response.json();
-        console.log()
+        const current_data=data.current;
         console.log(`Weather report of ${data.location.name}`);
-        console.log(`temprature ${data.current.temp_c} C`);
-        console.log(`weather ${data.current.condition.text}`);
+        console.log(`temprature ${current_data.temp_c} C`);
+        console.log(`weather ${ current_data.condition.text}`);
+        console.log(`Feels like ${current_data.feelslike_c} °C`);
+
 
     }
     catch(error){
-        console.log("something went wrong pls try again later");
-        console.log(error);
+        console.log("something went wrong .Pls check the is location or not.");
     }
     
 }
