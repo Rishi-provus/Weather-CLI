@@ -13,8 +13,6 @@ const rl=readline.createInterface({
 });
 
 
-
-
 const choice=(await rl.question("If you want your Current Locations weather enter C . If you want weather detail of Custom location enter R \n")).toUpperCase();
 
 if(choice=='C'){
@@ -55,7 +53,7 @@ async function fetch_weather_data(location){
 
     }
     catch(error){
-        console.log("something went wrong .Pls check the is location or not.");
+        console.log("something went wrong .Pls check the is location is correct or not.");
     }
     
 }
